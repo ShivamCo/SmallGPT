@@ -10,7 +10,9 @@ import 'dotenv/config'
 import { Login } from "./router/login.js";
 import { Register } from "./router/register.js";
 import { OpenAiRoute } from "./router/openAI.js";
-import { History } from "./router/history.js";
+import { HistoryRemove } from "./router/historyRemove.js";
+import { HistoryAdd } from "./router/historyAdd.js";
+import { HistorySend } from "./router/historySend.js";
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -27,7 +29,9 @@ mongoose.connect('mongodb+srv://shivamsinghcoo:NuzV0YOSyBaPCE5s@cluster0.k2nqksf
 app.use("/login", Login)
 app.use("/register", Register )
 app.use("/openai", OpenAiRoute)
-app.use("/history", History)
+app.use("/history", HistoryRemove)
+app.use("/history", HistoryAdd)
+app.use("/history", HistorySend)
 
 
 app.listen( PORT, ()=>{
