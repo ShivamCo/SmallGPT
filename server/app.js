@@ -18,11 +18,7 @@ const JWT_SECRET = process.env.SECRET_KEY;
 
 app.use(cookieParser())
 
-app.use(cors({
-    origin: 'https://minichatgpt.netlify.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  }));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 

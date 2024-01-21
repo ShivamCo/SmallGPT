@@ -1,13 +1,15 @@
 import OpenAI from "openai";
-import express from "express"
+import express from "express";
+import cors from "cors";
 
 const router = express.Router()
+const app = express()
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-
+app.use(cors());
 router.post("/", async (req, res) => {
 
     const content = req.body.question

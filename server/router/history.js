@@ -1,10 +1,12 @@
 import express from "express";
 import { userModel } from "../model/userSchema.js";
 import bodyParser from "body-parser";
+import cors from "cors";
 
 const app = express()
 const router = express.Router()
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
