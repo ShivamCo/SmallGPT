@@ -28,7 +28,7 @@ const RegisterPage = () => {
     }
 
 
-    console.log(email, password)
+    
 
     return (
         <div className=" bg-MainBody h-screen " >

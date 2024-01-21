@@ -76,7 +76,7 @@ const HistoryBar = () => {
 
     
 
-    console.log(history)
+   
 
     return (
         <>

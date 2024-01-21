@@ -66,7 +66,7 @@ const ChatBox = () => {
         try {
 
             const response = await axios.post("https://smallgpt.onrender.com/history/add", { history });
-            console.log("hello")
+            
         } catch (error) {
             console.error("Unable To save the response to DB", error)
         }
@@ -98,7 +98,7 @@ const ChatBox = () => {
     }, [])
 
 
-    console.log(sesionQuestion)
+    
 
     return (
 

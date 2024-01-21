@@ -63,7 +63,7 @@ const LoginPage = () => {
 
 
 
-    console.log(userDetails)
+    
 
     return (
         <div className=" bg-MainBody h-screen " >
