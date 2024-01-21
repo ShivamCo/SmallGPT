@@ -23,7 +23,7 @@ const HistoryBar = () => {
 
             try {
 
-                const response = await axios.post("http://localhost:3000/history/send", { user_ID, searchTerm });
+                const response = await axios.post("https://smallgpt.onrender.com/history/send", { user_ID, searchTerm });
                 setHistory(response.data)
                 console.log(response.data)
 
@@ -39,7 +39,7 @@ const HistoryBar = () => {
         
         if (removeDetail) {
             try {
-                const response = await axios.post("http://localhost:3000/history/remove", { removeDetail })
+                const response = await axios.post("https://smallgpt.onrender.com/history/remove", { removeDetail })
                 
             } catch (error) {
 
@@ -80,7 +80,8 @@ const HistoryBar = () => {
 
     return (
         <>
-            <div className={`flex-col w-3/12 ml-24 h-3/4 border-r border-slate-700 bg-MainBody `} >
+        {isAuthenticated ?
+            <div className={`flex-col justify-center w-3/12 ml-24 h-3/4 border-r border-slate-700 bg-MainBody `} >
                 <p className=" text-slate-200 text-xl underline underline-offset-4 mb-2 font-semibold text-center " >History</p>
 
                 <div className="flex w-full" >
@@ -148,7 +149,8 @@ const HistoryBar = () => {
 
 
                 </div>
-            </div>
+            </div>:
+            null}
         </>
     )
 

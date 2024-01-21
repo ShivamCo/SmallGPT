@@ -37,7 +37,7 @@ const LoginPage = () => {
     const handleSubmit = async () => {
 
         try {
-            const response = await axios.post('http://localhost:3000/login', { email, password })
+            const response = await axios.post('https://smallgpt.onrender.com/login', { email, password })
             setUserDetails(response.data)   
             
             // Cookies.set('user', response.data.user._id )
