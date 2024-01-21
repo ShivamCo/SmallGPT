@@ -17,7 +17,10 @@ const PORT = process.env.PORT || 3000
 const JWT_SECRET = process.env.SECRET_KEY;
 
 app.use(cookieParser())
-app.use(cors())
+
+app.use(cors({
+    origin: 'https://minichatgpt.netlify.app',
+  }));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
