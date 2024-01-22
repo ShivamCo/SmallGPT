@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
         presence_penalty: 0,
       });
 
-      res.json(response)
+      res.send(response)
 
 })
 
