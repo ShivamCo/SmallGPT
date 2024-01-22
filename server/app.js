@@ -18,6 +18,14 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const JWT_SECRET = process.env.SECRET_KEY;
 
+
+
+app.use(cookieParser())
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
 app.use(function (req, res, next){
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -30,15 +38,6 @@ app.use(function (req, res, next){
   );
   next();
 })
-
-app.use(cookieParser())
-
-app.use(cors({
-    origin: ['https://minichatgpt.netlify.app/','http://localhost:5173/', 'https://65ad4cb7f147bb7d375d17f2--minichatgpt.netlify.app/'], 
-    optionsSuccessStatus: 200,
-  }));
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
 
 mongoose.connect('mongodb+srv://shivamsinghcoo:NuzV0YOSyBaPCE5s@cluster0.k2nqksf.mongodb.net/');
 
