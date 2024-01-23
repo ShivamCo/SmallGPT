@@ -32,13 +32,13 @@ const ChatBox = () => {
 
         try {
 
-            const response = await axios.post("https://smallgpt.onrender.com/openai", { "question": question })
+            const response = await axios.post("minismallgpt.ap-1.evennode.com/openai", { "question": question })
 
             setAnswer(response.data.choices[0].message.content)
             setSessionQuestion(sesionQuestion.concat({ "question": question, "answer": answer }))
             setProcessing(false)
 
-            await axios.post("https://smallgpt.onrender.com/history/add", { "question": question, "answer": response.data.choices[0].message.content, user_ID }, user_ID)
+            await axios.post("minismallgpt.ap-1.evennode.com/history/add", { "question": question, "answer": response.data.choices[0].message.content, user_ID }, user_ID)
 
 
 
@@ -65,7 +65,7 @@ const ChatBox = () => {
         })
         try {
 
-            const response = await axios.post("https://smallgpt.onrender.com/history/add", { history });
+            const response = await axios.post("minismallgpt.ap-1.evennode.com/history/add", { history });
             
         } catch (error) {
             console.error("Unable To save the response to DB", error)

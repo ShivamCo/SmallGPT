@@ -18,7 +18,7 @@ const RegisterPage = () => {
 
 
         try {
-            const response = await axios.post('https://smallgpt.onrender.com/register', { email, password });
+            const response = await axios.post('minismallgpt.ap-1.evennode.com/register', { email, password });
             
             alert(response.data.message)
             navigate("/login")
