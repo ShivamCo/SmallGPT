@@ -10,7 +10,9 @@ import { userModel } from "../model/userSchema.js";
 const app = express()
 const router = express.Router()
 const JWT_SECRET = process.env.SECRET_KEY;
+
 app.use(cors());
+
 app.use(cookieParser())
 
 

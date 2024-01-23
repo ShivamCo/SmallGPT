@@ -37,7 +37,7 @@ const LoginPage = () => {
     const handleSubmit = async () => {
 
         try {
-            const response = await axios.post('http://minismallgpt.ap-1.evennode.com/login', { email, password })
+            const response = await axios.post('https://minismallgpt.ap-1.evennode.com/login', { email, password })
             setUserDetails(response.data)   
             
             // Cookies.set('user', response.data.user._id )
