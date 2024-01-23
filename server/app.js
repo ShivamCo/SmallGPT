@@ -15,7 +15,7 @@ import { HistoryAdd } from "./router/historyAdd.js";
 import { HistorySend } from "./router/historySend.js";
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 const JWT_SECRET = process.env.SECRET_KEY;
 
 
