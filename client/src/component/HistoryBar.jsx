@@ -23,7 +23,7 @@ const HistoryBar = () => {
 
             try {
 
-                const response = await axios.post("https://minismallgpt.ap-1.evennode.com/history/send", { user_ID, searchTerm });
+                const response = await axios.post("https://smallgpt.onrender.com/history/send", { user_ID, searchTerm });
                 setHistory(response.data)
                 console.log(response.data)
 
@@ -39,7 +39,7 @@ const HistoryBar = () => {
         
         if (removeDetail) {
             try {
-                const response = await axios.post("https://minismallgpt.ap-1.evennode.com/history/remove", { removeDetail })
+                const response = await axios.post("https://smallgpt.onrender.com/history/remove", { removeDetail })
                 
             } catch (error) {
 
