@@ -5,23 +5,23 @@ import MainBody from "./MainBody"
 
 const Template = () => {
     return (
-        <div className="flex " >
+        <div className="flex  " >
             {/* Left Side */}
 
-            <div>
-            <LeftBar />
+            <div className="" >
+                <LeftBar />
+
             </div>
-                
-            
-
-            
-                <TopBar />
-                
 
 
-               
 
-            
+            <TopBar />
+
+
+
+
+
+
 
         </div>
     )

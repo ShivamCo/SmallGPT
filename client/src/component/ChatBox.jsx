@@ -102,18 +102,18 @@ const ChatBox = () => {
 
     return (
 
-        <div className=" flex flex-col w-3/4 border p-2 border-slate-200 border-opacity-40  bg-LeftBar rounded-2xl h-full  " >
+        <div className={`z-0  mt-10 m-2 flex flex-col w-full h-full  border p-2 border-slate-200 border-opacity-40  bg-LeftBar rounded-2xl sm:h-full`} >
 
             {isAuthenticated ?
 
                 <>
                     <div className=" flex-1 overflow-auto h-full flex-col p-4
             
-            [&::-webkit-scrollbar]:w-1
-            [&::-webkit-scrollbar]:p-2
-            [&::-webkit-scrollbar-track]:rounded-full
-            [&::-webkit-scrollbar-track]:bg-gray-900
-            [&::-webkit-scrollbar-thumb]:rounded-full
+                    [&::-webkit-scrollbar]:w-1
+                    [&::-webkit-scrollbar]:p-2
+                    [&::-webkit-scrollbar-track]:rounded-full
+                [&::-webkit-scrollbar-track]:bg-gray-900
+                        [&::-webkit-scrollbar-thumb]:rounded-full
             [&::-webkit-scrollbar-thumb]:bg-gray-400
         
 
@@ -123,14 +123,14 @@ const ChatBox = () => {
                         {processing ?
                             <div className="  flex  justify-center items-center ">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="animate-spin h-8 w-8 mr-3 ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="animate-spin text-white h-8 w-8 mr-3 ">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
                                 </svg>
 
                                 <span className="text-slate-400 text-2xl " >  Processing...</span>
 
                             </div> :
-                            <p className=" text-3xl text-center font-bold " >
+                            <p className={` text-3xl ${answer ? "hidden" : "flex" } text-center text-slate-300 font-bold `} >
                                 How can I help you today?
                             </p>
                         }
@@ -142,8 +142,8 @@ const ChatBox = () => {
                                 
 
                                 <div className=" p-4 m-2 border border-slate-200 rounded-2xl border-opacity-40 " >
-                                    <p className="mb-2 border-b pb-2 font-semibold text-xl" >{question}</p>
-                                    <p>{para}</p>
+                                    <p className="mb-2 border-b text-slate-200 pb-2 font-semibold text-xl" >{question}</p>
+                                    <p className="text-slate-200" >{para}</p>
                                 </div>
                             </div>
                             : null
@@ -160,7 +160,7 @@ const ChatBox = () => {
 
                                 <form className="w-full" onSubmit={handleSubmit} >
                                     <div className="flex justify-center items-center " >
-                                        <input onChange={handleChange} className="pl-4 text-xl font-thin w-3/4 m-2 h-12 border border-slate-200 border-opacity-30 bg-white bg-opacity-10 rounded-full" >
+                                        <input onChange={handleChange} className="pl-4 text-xl text-white font-thin w-3/4 m-2 h-12 border border-slate-200 border-opacity-30 bg-white bg-opacity-10 rounded-full" >
                                         </input>
                                         <input type="submit" className=" bg-sky-500 font-semibold hover:cursor-pointer text-white p-2 h-min px-4 rounded-2xl " />
                                     </div>
@@ -173,10 +173,10 @@ const ChatBox = () => {
 
                 : <div className=" flex flex-col justify-center items-center h-full " >
 
-                    <span className=" font-semibold text-3xl " >
+                    <span className=" text-white font-semibold text-3xl " >
                         Please Login
                     </span>
-                    <a href="/login" className=" p-2 px-4 font-semibold shadow-sm shadow-white bg-sky-500 rounded-xl m-2 hover:bg-slate-500 hover:cursor-pointer " >
+                    <a href="/login" className=" p-2 text-white px-4 font-semibold shadow-sm shadow-white bg-sky-500 rounded-xl m-2 hover:bg-slate-500 hover:cursor-pointer " >
                         Log In Now
                     </a>
 

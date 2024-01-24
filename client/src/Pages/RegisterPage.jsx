@@ -33,10 +33,10 @@ const RegisterPage = () => {
     return (
         <div className=" bg-MainBody h-screen " >
 
-            <div className="min-h-screen bg-MainBody py-6 flex flex-col justify-center sm:py-12">
-                <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-                    <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+            <div className="min-h-screen p-4 bg-MainBody py-6 flex flex-col justify-center sm:py-12">
+                <div className="relative py-3 rounded-xl sm:max-w-xl sm:mx-auto">
+                    <div className="absolute inset-0  rounded-xl bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
+                    <div className="relative px-4 py-10  rounded-xl bg-white shadow-lg sm:rounded-3xl sm:p-20">
                         <div className="max-w-md mx-auto">
                             <div>
                                 <h1 className="text-2xl font-semibold">Register</h1>
