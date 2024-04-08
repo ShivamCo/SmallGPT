@@ -12,6 +12,8 @@ const HistoryBar = () => {
     const [removeDetail, setRemoveDetail] = useState({})
     const [searchTerm, setSearchTerm] = useState('')
 
+    const [isLoading, setIsLoading] = useState(false)
+
 
     const { isAuthenticated, token } = useSelector(selectAuth);
     const user_ID = Cookies.get("user")
@@ -22,10 +24,11 @@ const HistoryBar = () => {
         if (user_ID) {
 
             try {
-
+                setIsLoading(true)
                 const response = await axios.post("https://smallgpt.onrender.com/history/send", { user_ID, searchTerm });
                 setHistory(response.data)
-                console.log(response.data)
+                
+                setIsLoading(false)
 
 
             } catch (error) {
@@ -81,7 +84,7 @@ const HistoryBar = () => {
     return (
         <div className={` flex  justify-start mt-10  h-full  flex-1 `} >
             {isAuthenticated ?
-                <div className={`flex-col w-full sm:w-3/4  h-3/4  bg-MainBody `} >
+                <div className={`flex-col w-full sm:w-84  h-3/4  bg-MainBody `} >
                     <p className=" text-slate-200 text-xl underline underline-offset-4 mb-2 font-semibold text-center " >History</p>
 
                     <div className="flex   w-full" >
@@ -89,7 +92,10 @@ const HistoryBar = () => {
                         </input>
                     </div>
 
-                    <div className="flex justify-center  w-full overflow-auto text-white" >
+                    {
+                        
+                        
+                        <div className="flex justify-center  w-full overflow-auto text-white" >
                         {isAuthenticated
                             ? <div className=" flex  flex-col w-full p-2 " >
 
@@ -140,7 +146,7 @@ const HistoryBar = () => {
                         }
 
 
-                    </div>
+                    </div>}
                 </div> :
                 null}
         </div>

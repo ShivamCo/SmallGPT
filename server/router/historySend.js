@@ -38,4 +38,22 @@ router.post("/send", async (req, res) => {
 
 })
 
+
+router.post("/awake", async (req, res) => {
+
+  try {
+
+    const response = await userModel.findOne({email: "sdasdfasdfasdfsa"})
+    
+    res.json(response)
+    console.log(response)
+
+  } catch (error) {
+
+    console.log(error.message)
+
+  }
+
+})
+
 export { router as HistorySend }
