@@ -16,7 +16,7 @@ import { HistoryAdd } from "./router/historyAdd.js";
 import { HistorySend } from "./router/historySend.js";
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 4000
 const JWT_SECRET = process.env.SECRET_KEY;
 
 
@@ -29,21 +29,21 @@ app.use(bodyParser.json())
 
 mongoose.connect('mongodb+srv://shivamsinghcoo:NuzV0YOSyBaPCE5s@cluster0.k2nqksf.mongodb.net/');
 
-const Awake = async () => {
+// const Awake = async () => {
 
-    try {
-        const response = await axios.post("https://smallgpt.onrender.com/history/awake")
-        console.log(response.data)
-    } catch (error) {
-        console.log(error.message)
-    }
+//     try {
+//         const response = await axios.post("http://localhost:4000/history/awake")
+//         console.log(response.data)
+//     } catch (error) {
+//         console.log(error.message)
+//     }
 
-}
-
-
+// }
 
 
-setInterval(Awake, 14*60*1000);
+
+
+// setInterval(Awake, 14*60*1000);
 
 app.use("/login", Login)
 app.use("/register", Register )
