@@ -2,7 +2,7 @@ import { useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const SERVERURL = 'https://smallgpt-6oon.onrender.com'
+const SERVERURL = 'https://smallgpt-6oon.onrender.com/'
 
 const RegisterPage = () => {
 

@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/authSlice";
 
-const SERVERURL = 'https://smallgpt-6oon.onrender.com'
+const SERVERURL = 'https://smallgpt-6oon.onrender.com/'
 
 const LoginPage = () => {
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAuth, logout } from '../redux/authSlice.js'
 
-const SERVERURL = 'https://smallgpt-6oon.onrender.com'
+const SERVERURL = 'https://smallgpt-6oon.onrender.com/'
 
 const HistoryBar = () => {
 
