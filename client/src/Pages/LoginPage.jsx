@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/authSlice";
 
+const SERVERURL = 'https://smallgpt-6oon.onrender.com'
 
 const LoginPage = () => {
 
@@ -40,7 +41,7 @@ const LoginPage = () => {
 
         try {
             setIsLoading(true)
-            const response = await axios.post('https://smallgpt.onrender.com/login', { email, password })
+            const response = await axios.post(SERVERURL, { email, password })
             setUserDetails(response.data)
             setIsLoading(false)
 

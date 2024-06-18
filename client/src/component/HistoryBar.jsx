@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAuth, logout } from '../redux/authSlice.js'
 
+const SERVERURL = 'https://smallgpt-6oon.onrender.com'
 
 const HistoryBar = () => {
 
@@ -25,7 +26,7 @@ const HistoryBar = () => {
 
             try {
                 setIsLoading(true)
-                const response = await axios.post("https://smallgpt.onrender.com/history/send", { user_ID, searchTerm });
+                const response = await axios.post(SERVERURL, { user_ID, searchTerm });
                 setHistory(response.data)
                 
                 setIsLoading(false)
@@ -42,7 +43,7 @@ const HistoryBar = () => {
 
         if (removeDetail) {
             try {
-                const response = await axios.post("https://smallgpt.onrender.com/history/remove", { removeDetail })
+                const response = await axios.post(SERVERURL, { removeDetail })
 
             } catch (error) {
 

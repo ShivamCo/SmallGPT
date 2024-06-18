@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const SERVERURL = 'https://smallgpt-6oon.onrender.com'
 
 const RegisterPage = () => {
 
@@ -20,7 +21,7 @@ const RegisterPage = () => {
 
         try {
             setIsLoading(true)
-            const response = await axios.post('https://smallgpt.onrender.com/register', { email, password });
+            const response = await axios.post(SERVERURL, { email, password });
             setIsLoading(false)
             alert(response.data.message)
             navigate("/login")

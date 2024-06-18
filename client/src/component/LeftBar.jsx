@@ -6,6 +6,7 @@ import { login, logout } from '../redux/authSlice';
 import { useDispatch } from "react-redux";
 
 
+const SERVERURL = 'https://smallgpt-6oon.onrender.com'
 
 const LeftBar = () => {
 
