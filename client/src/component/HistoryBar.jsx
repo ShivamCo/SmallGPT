@@ -26,7 +26,7 @@ const HistoryBar = () => {
 
             try {
                 setIsLoading(true)
-                const response = await axios.post(SERVERURL, { user_ID, searchTerm });
+                const response = await axios.post(SERVERURL+"history/send", { user_ID, searchTerm });
                 setHistory(response.data)
                 
                 setIsLoading(false)
@@ -43,7 +43,7 @@ const HistoryBar = () => {
 
         if (removeDetail) {
             try {
-                const response = await axios.post(SERVERURL, { removeDetail })
+                const response = await axios.post(SERVERURL+"history/remove", { removeDetail })
 
             } catch (error) {
 

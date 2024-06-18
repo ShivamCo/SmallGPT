@@ -67,7 +67,7 @@ const ChatBox = () => {
         })
         try {
 
-            const response = await axios.post(SERVERURL, { history });
+            const response = await axios.post(SERVERURL+"history/add", { history });
             
         } catch (error) {
             console.error("Unable To save the response to DB", error)

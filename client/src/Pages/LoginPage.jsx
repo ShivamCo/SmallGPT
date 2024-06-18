@@ -41,7 +41,7 @@ const LoginPage = () => {
 
         try {
             setIsLoading(true)
-            const response = await axios.post(SERVERURL, { email, password })
+            const response = await axios.post(SERVERURL+'login', { email, password })
             setUserDetails(response.data)
             setIsLoading(false)
 

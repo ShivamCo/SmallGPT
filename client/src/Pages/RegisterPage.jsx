@@ -21,7 +21,7 @@ const RegisterPage = () => {
 
         try {
             setIsLoading(true)
-            const response = await axios.post(SERVERURL, { email, password });
+            const response = await axios.post(SERVERURL+'register', { email, password });
             setIsLoading(false)
             alert(response.data.message)
             navigate("/login")
