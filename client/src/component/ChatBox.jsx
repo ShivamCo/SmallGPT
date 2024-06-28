@@ -34,7 +34,7 @@ const ChatBox = () => {
 
         try {
 
-            const response = await axios.post(SERVERURL, { "question": question })
+            const response = await axios.post(SERVERURL+"openai", { "question": question })
 
             setAnswer(response.data.choices[0].message.content)
             setSessionQuestion(sesionQuestion.concat({ "question": question, "answer": answer }))
